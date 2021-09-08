@@ -29,7 +29,7 @@
   }
 
   const selectors = {
-    /* 楽天 RMS */
+    // 楽天
     'rakuten' : {
       '名前'     : '//div[@class="rms-content-order-details-contact-info col-sm-12 rms-clear-padding"]//*[@class="fullname"]',
       'フリガナ' : '//div[@class="rms-content-order-details-contact-info col-sm-12 rms-clear-padding"]//*[@class="furigana"]',
