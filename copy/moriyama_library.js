@@ -11,7 +11,7 @@
     func(jQuery.noConflict(true));
   };
   document.body.appendChild(script);
-})(async () => {
+})(async ($) => {
   const _x = STR_XPATH => {
     const xresult = document.evaluate(STR_XPATH, document, null, XPathResult.ANY_TYPE, null);
     const xnodes = [];
