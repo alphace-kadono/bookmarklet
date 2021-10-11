@@ -11,7 +11,10 @@ https://<span style="color:red">cdn.jsdelivr.net/gh</span>/alphace-kadono/bookma
 
 ## js script example
 ```
-javascript:(function(d,j,s){s=d.createElement('script');s.src=j;d.body.appendChild(s);})(document,'https://cdn.jsdelivr.net/gh/alphace-kadono/bookmarklet@latest/copy/moriyama_library.js?' + new Date().getTime().toString(16))
+javascript:(function(d,j,s){s=d.createElement('script');s.src=j;d.body.appendChild(s);})(document,'https://cdn.jsdelivr.net/gh/alphace-kadono/bookmarklet@main/copy/moriyama_library.js')
+```
+```
+javascript:(function(d,j,s){s=d.createElement('script');s.src=j;d.body.appendChild(s);})(document,'https://cdn.jsdelivr.net/gh/alphace-kadono/bookmarklet@main/copy/imgur.js')
 ```
 ## Refresh CDN Server
 <p>
