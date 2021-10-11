@@ -24,11 +24,12 @@ javascript:
     return;
   }
 
-  const selector = '//img[contains(@class, "image-placeholder")]';
+  const selector = '//img[@class="image-placeholder"]';
   const item = $(_x(selector));
-
   let url = item.attr('src');
-  url = url.replace(/\.png/, '.webp?maxwidth=960');
+
+  url = url.split('?')[0].replace(/\.png/, '.webp');
+  url = `${url}?maxwidth=960`;
 
   navigator.clipboard.writeText(url);
   alert('URL をコピーしました🆗');
