@@ -50,5 +50,7 @@ javascript:
   clipText = [searchText, newUrl].join('\n');
   navigator.clipboard.writeText(clipText);
 
-  location.href = newUrl;
+  if (location.href != newUrl) {
+    location.href = newUrl;
+  }
 })();
