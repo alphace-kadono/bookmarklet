@@ -3,7 +3,7 @@
  * 対象図書への直リンク URL をクリップボードにコピーする
  *
  */
- (func => {
+(func => {
   console.log('load jquery');
   const script = document.createElement('script');
   script.src = '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js';
@@ -38,7 +38,7 @@
   const biblioid = $(_x(selector)).val();
 
   const originalUrl = new URL(location.href);
-  const url = (originalUrl.origin + originalUrl.pathname).replace(/;jsess.*$/, '');
+  const url = unescape(originalUrl.origin + originalUrl.pathname).replace(/;jsess.*$/, '');
   const href = url + '?biblioid=' + biblioid;
 
   let copys = [];
