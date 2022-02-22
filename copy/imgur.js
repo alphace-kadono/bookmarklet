@@ -25,8 +25,8 @@ javascript:
   }
 
   const selector = '//img[@class="image-placeholder"]';
-  const item = $(_x(selector));
-  let url = item.attr('src');
+  const $item = $(_x(selector));
+  let url = $item.attr('src');
 
   url = url.split('?')[0].replace(/\.png/, '.webp');
   url = `${url}?maxwidth=960`;
