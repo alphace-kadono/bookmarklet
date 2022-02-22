@@ -22,9 +22,9 @@ javascript:
       await sleep(waitSec);
     }
 
-    const frame = $('frame').contents();
+    const $frame = $('frame').contents();
 
-    if ($('.number, .number-multi', frame).length > 0) {
+    if ($('.number, .number-multi', $frame).length > 0) {
       document.title = `🛑${document.title}`;
     }
 
