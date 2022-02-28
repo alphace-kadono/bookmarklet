@@ -24,6 +24,7 @@ javascript:
 
   /* 商品タイトル */
   let title = _x('//*[@id="productTitle"]')[0].textContent || 'unknown';
+  title = title.trim();
   title = title.replace(/\n/g, '');
 
   /* 商品 URL */
