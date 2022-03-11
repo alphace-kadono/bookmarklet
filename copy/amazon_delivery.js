@@ -32,4 +32,5 @@ javascript:
 
   clipText = newUrl;
   navigator.clipboard.writeText(clipText);
+  alert('URL をコピーしました🆗');
 })();
