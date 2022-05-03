@@ -8,14 +8,23 @@ javascript:
   const reload = async () => {
     const timestamp = new Date().toLocaleTimeString();
     const newTitle = `${timestamp} | ${title}`;
+    // IFRAME Set Height to 100%
+    // https://stackoverflow.com/a/68987936
+    const body = `
+    <div style="position:fixed; left:0; right:0; top:0; bottom:0; margin:0px; padding:0px; overflow:hidden">
+      <iframe src="${url}" frameborder="0" style="overflow:hidden; height:100%; width:100%" height="100%" width="100%">
+      </iframe>
+    </div>
+    `;
 
-    // iframe をフル画面に設定するのが面倒そうなので、非推奨の frameset を利用
-    // const iframe = `<iframe src="${url}"/></iframe>`;
-    const iframe = `<frameset cols="*"><frame src="${url}"/></frameset>`;
-
-    document.write(`<title>${newTitle}</title>`);
-    document.write(iframe);
-    document.close();
+    // <head><title>
+    document.head.innerHTML = `<title>${newTitle}</title>`;
+    // <body>
+    for (const className of [...document.body.classList]) {
+      document.body.classList.remove(className);
+    }
+    document.body.style = 'position:relative;';
+    document.body.innerHTML = body;
 
     if (waitSec > 0) {
       const sleep = sec => new Promise(resolve => setTimeout(resolve, sec * 1000));
