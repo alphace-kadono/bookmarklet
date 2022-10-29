@@ -23,15 +23,20 @@
     return xnodes;
   };
 
-  // 全角→半角（英数字）
-  // https://qumeru.com/magazine/395
+  // 全角→半角（英数字｜空白｜タブ）
   const replaceFullToHalf = str => {
     if (!str) {
       return;
     }
-    return str.replace(/[！-～]/g, function (s) {
-      return String.fromCharCode(s.charCodeAt(0) - 0xFEE0);
-    });
+    // 空白｜タブ
+    str = str.replace(/\t|　/g, ' ');
+    // 英数字
+    // https://qumeru.com/magazine/395
+    str = str.replace(/[！-～]/g, s =>
+      String.fromCharCode(s.charCodeAt(0) - 0xFEE0)
+    );
+
+    return str;
   }
 
   const selector = '//form[@name="searchdetail"]//input[@name="biblioid"]';
