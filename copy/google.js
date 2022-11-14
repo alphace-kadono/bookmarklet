@@ -9,7 +9,7 @@ javascript:
     alert('このブラウザでは使用できません🙇');
     return;
   }
-  if (!window.location.href.match(/google\.com\//)) {
+  if (!window.location.href.match(`^https://(www.)?google[.]`)) {
     alert('このサイトでは使用できません🙇');
     return;
   }
