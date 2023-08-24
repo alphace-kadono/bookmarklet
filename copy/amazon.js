@@ -1,10 +1,10 @@
 javascript:
 (async () => {
-  if (! navigator.clipboard) {
+  if (!navigator.clipboard) {
     alert('このブラウザでは使用できません🙇');
     return;
   }
-  if (! window.location.href.match(/amazon\.(com|co\.jp)\//)) {
+  if (!window.location.href.match(/amazon\.(com|co\.jp)\//)) {
     alert('このサイトでは使用できません🙇');
     return;
   }
@@ -34,7 +34,7 @@ javascript:
   clipText = [title, url].join('\n');
   navigator.clipboard.writeText(clipText);
 
-  if (! location.href.startsWith(url)) {
+  if (location.href != url) {
     location.href = url;
   }
 })();
