@@ -1,7 +1,8 @@
 javascript:
 (() => {
-  const timeout = prompt('Set timeout [sec]', 60);
-  const waitSec = prompt('Set wait for page loaded [sec]', 3);
+  const timeout = prompt('update interval [sec]', 60);
+  // const waitSec = prompt('Set wait for page loaded [sec]', 3);
+  const waitSec = 1;
   const url = location.href;
   const title = document.title;
 
